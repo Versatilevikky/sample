@@ -3,8 +3,10 @@ package com.myapp.test.myapplication;
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.action.ReplaceTextAction;
+import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -21,13 +23,18 @@ import static org.junit.Assert.*;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
-    @Test
-    public void useAppContext() {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.myapp.test.myapplication", appContext.getPackageName());
-    }
+
+    @Rule
+    public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
+
+//    @Test
+//    public void useAppContext() {
+//        // Context of the app under test.
+//        Context appContext = InstrumentationRegistry.getTargetContext();
+//
+//        assertEquals("com.myapp.test.myapplication", appContext.getPackageName());
+//    }
 
     @Test
     public void type(){

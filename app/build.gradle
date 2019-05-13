@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'spoon'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -25,4 +25,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+
+
+    androidTestImplementation 'com.squareup.spoon:spoon-client:1.6.4'
+}
+spoon{
+    singleInstrumentationCall = true
 }
